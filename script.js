@@ -3,13 +3,20 @@ let canvas, ctx, isDrawing = false, lastX = 0, lastY = 0;
 
 window.onload = function() {
     // Get canvas element and context
-    var canvas = document.getElementById('signatureCanvas');
-
-if (window.screen.width < 600) {
-    canvas.height = window.innerWidth * 0.95; // Set canvas height to 95% of the viewport height
-    canvas.width = window.innerWidth * 0.95; // Set canvas width to 95% of the viewport width
-}
-
+    canvas = document.getElementById('signatureCanvas');
+    const container = document.getElementById('container');
+    
+        canvas.height = container.clientHeight; // Set canvas height to the container's height
+        canvas.width = container.clientWidth; // Set canvas width to the container's width
+   
+        canvas.height = container.clientHeight; // Set canvas height to the container's height
+        canvas.width = container.clientWidth; 
+        
+    if (window.innerWidth < 600) {
+        canvas.height = window.innerWidth * 0.95; // Set canvas height to 95% of the viewport height
+        canvas.width = window.innerWidth * 0.95; // Set canvas width to 95% of the viewport width
+    } 
+// 
     ctx = canvas.getContext('2d');
     ctx.fillStyle="white";
     ctx.fillRect(0,0,canvas.width,canvas.height);
@@ -68,7 +75,9 @@ function stopDrawing() {
 // Function to download the signature as an image
 function downloadSignature() {
     // Get the data URL of the canvas
+    // console.log(canvas);
     const dataURL = canvas.toDataURL('image/png');
+    // console.log(dataURL);
     // Create a link element
     const link = document.createElement('a');
     // Set the href attribute to the data URL
