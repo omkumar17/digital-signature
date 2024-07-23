@@ -9,8 +9,7 @@ window.onload = function() {
         canvas.height = container.clientHeight; // Set canvas height to the container's height
         canvas.width = container.clientWidth; // Set canvas width to the container's width
    
-        canvas.height = container.clientHeight; // Set canvas height to the container's height
-        canvas.width = container.clientWidth; 
+       
         
     if (window.innerWidth < 600) {
         canvas.height = window.innerWidth * 0.95; // Set canvas height to 95% of the viewport height
