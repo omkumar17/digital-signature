@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signature Pad</title>
-     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 
 </head>
+
 <body>
     <div class="container" id="container" style="margin:0 20px">
 
-    
-    <canvas id="signatureCanvas" ></canvas>
-</div>
-<button id="downloadBtn">Download Signature</button>
+
+        <canvas id="signatureCanvas"></canvas>
+    </div>
+    <div class="buttons">
+        <button id="downloadBtn" class="actionbtn">Download Signature</button>
+        <input type="color" class="color actionbtn" id="color">
+    </div>
 
     <script src="script.js"></script>
 </body>
+
 </html>

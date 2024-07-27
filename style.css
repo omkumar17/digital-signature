@@ -12,7 +12,7 @@ body {
 .container{
     height:50%;
     width:95%;
-     margin: 0;
+     margin: 30px 0;
 }
 
 #signatureCanvas {
@@ -24,7 +24,31 @@ body {
     cursor: crosshair;
     background:white;
 }
+.buttons{
+    display:flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.actionbtn{
+    background-color: white;
+    color:black;
+    border:1px solid black;
+    height:30px;
+    width:150px;
+    margin: 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor:pointer;
+}
+#downloadBtn:hover{
+    background-color: rgb(0, 75, 0);
+    color:white;
+    border-color: white;
+}
 @media only screen and (max-width:600px){
+    .container,
     #signatureCanvas{
         width:95vw ;
         height:96vw;

@@ -18,6 +18,7 @@ window.onload = function() {
 // 
     ctx = canvas.getContext('2d');
     ctx.fillStyle="white";
+    ctx.strokeStyle='black';
     ctx.fillRect(0,0,canvas.width,canvas.height);
 
     // Add event listeners based on the device type
@@ -33,7 +34,6 @@ window.onload = function() {
         canvas.addEventListener('mouseout', stopDrawing);
     }
 
-    // Add event listener for download button
     document.getElementById('downloadBtn').addEventListener('click', downloadSignature);
 };
 
@@ -58,7 +58,7 @@ function draw(e) {
     const x = e.offsetX || e.touches[0].clientX;
     const y = e.offsetY || e.touches[0].clientY;
     ctx.lineTo(x, y);
-    ctx.strokeStyle = '#000'; // Black color
+    // ctx.strokeStyle = '#000'; 
     ctx.lineWidth = 2;
     ctx.lineCap = 'round';
     ctx.lineJoin = 'round';
@@ -86,3 +86,9 @@ function downloadSignature() {
     // Trigger a click event on the link to start the download
     link.click();
 }
+
+
+color.addEventListener("change",()=>{
+    console.log(color.value);
+    ctx.strokeStyle=color.value;
+})
